@@ -164,6 +164,17 @@ public class Score_class {
 				random.nextInt(101), 
 				random.nextInt(101)));
 	}
+	
+			//석차구하기
+		for(Score score : list) { //->가져온 데이터(기준)
+			int rank = 1; //처음에는 1등으로 시작
+			for(Score s : list) { //=>가져온 데이터랑 비교하는 비교대상
+				if(score.getSum()<s.getSum()) {
+					rank++;
+				}
+			}
+			score.setRank(rank);
+		}
 
 		
 		System.out.println("이름\t국어\t영어\t수학\t사회\t과학\tOracle\tJava\t합계\t평균\t석차");
